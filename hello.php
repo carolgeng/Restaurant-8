@@ -17,6 +17,7 @@
     }
     echo "<p>Connected successfully</p>";
 
+    #Testing data insertion
     $sql = "INSERT INTO users (first_name, last_name, type, email, password) VALUES ('John', 'Doe', 'customer', 'john@example.com', 'password')";
 
     if (mysqli_query($conn, $sql)) {
