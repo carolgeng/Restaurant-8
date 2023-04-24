@@ -37,6 +37,11 @@ session_start();
             echo "Passwords do not match";
             $valid_entries = False;
         }
+        $query = "select * from users where email = '$email' limit 1";
+        $result = mysqli_query($conn, $query);
+        if($result) {
+
+        }
         if($valid_entries) {
             if(empty($phone)) {
                 //save to database
@@ -71,7 +76,7 @@ session_start();
                 Name:
                 <p><input type='text' placeholder="John" name='fname'></p>
                 <p><input type='text' placeholder="Doe" name='lname'></p>
-                Phone: 
+                (Optional) Phone: 
                 <p><input type='text' placeholder="111-111-1111" name='phone'></p>
                 <input type='submit' value='Signup'> <br><br>
                 <a href='login.php'>Login</a> <br><br>
