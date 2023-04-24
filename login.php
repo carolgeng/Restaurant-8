@@ -44,7 +44,7 @@ session_start();
         <div id='box'>
             <h1>Login</h1>
             <form method='post'>
-                <input type='text' name='email'> <br><br>
+                <input type='text' name='email' autofocus=true> <br><br>
                 <input type='password' name='password'> <br><br>
                 <input type='submit' value='Login'> <br><br>
                 <a href='signup.php'>Sign Up</a> <br><br>
