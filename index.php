@@ -5,15 +5,13 @@ session_start();
     $user_data = check_login($conn);
 ?>
 
-<!DOCTYPE html>
 <html>
     <head>
         <title>Landing</title>
     </head>
     <body>
-        <a href="logout.php">Logout</a>
         <h1>This is the landing page</h1>
         <br>
-        Hello, <?php echo $user_data['first_name']; ?>
+        <h4>Hello, <?php echo $user_data['first_name']; ?></h4>
     </body>
 </html>

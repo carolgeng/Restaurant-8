@@ -70,34 +70,55 @@ session_start();
         </style>
     </head>
     <body>
-        <div id='box'>
-            <h1>Edit Account</h1>
+        <div class='card mx-auto w-75'>
+            <h1 class="card-header">Edit Account</h1>
 
-            <form method='post'>
-                Email:
-                <p><?php echo $row['email'] ?></p>
-                Account Type:
-                <p><?php echo $row['type'] ?></p>
-                Password:
-                <p><input type='password' value=<?php echo $row['password'] ?> name='password'></p>
-                Confirm Password:
-                <p><input type='password' value=<?php echo $row['password'] ?> name='cpassword'></p>
-                Name:
-                <p><input type='text' value=<?php echo $row['first_name'] ?> name='fname'></p>
-                <p><input type='text' value=<?php echo $row['last_name'] ?> name='lname'></p>
-                (Optional) Phone: 
-                <?php 
-                    $phone = $row['phone'];
-                    if ($phone)
-                        echo "<p><input type='text' value=$phone name='phone'></p>";
-                    else
-                        echo "<p><input type='text' name='phone'></p>";
-                ?>
-
-                <a href='delete.php'>Delete Account</a> <br><br>
-
-                <input type='submit' value='Update'> <br><br>
-                <a href='index.php'>Cancel</a> <br><br>
+            <form method='post' class="card-body">
+                <div class='row'>
+                    <div class='col'>
+                        Email:
+                        <input type="text" class="form-control" value=<?php echo $row['email'] ?> disabled>
+                    </div>
+                </div>
+                <div class='row'>
+                    <div class='col'>
+                        Password:
+                        <input type='password' class="form-control" value=<?php echo $row['password'] ?> name='password'>
+                    </div>
+                    <div class='col'>
+                        Confirm Password:
+                        <input type='password' class="form-control" value=<?php echo $row['password'] ?> name='cpassword'>
+                    </div>
+                </div>
+                <div class='row'>
+                    <div class='col'>
+                        First Name:
+                        <input type='text' class="form-control" value=<?php echo $row['first_name'] ?> name='fname'>
+                    </div>
+                    <div class='col'>
+                        Last Name:
+                        <input type='text' class="form-control" value=<?php echo $row['last_name'] ?> name='lname'>
+                    </div>
+                </div>
+                <div class='row'>
+                    <div class='col'>
+                        (Optional) Phone: 
+                        <?php 
+                            $phone = $row['phone'];
+                            if ($phone) { ?>
+                                <p><input type='text' class="form-control" value=<?php echo $phone ?> name='phone'></p>
+                            <?php } else { ?>
+                                <p><input type='text' class="form-control" name='phone'></p> 
+                        <?php } ?>
+                    </div>
+                    <div class='col-4'>
+                        Account Type:
+                        <input type="text" class="form-control" value=<?php echo $row['type'] ?> disabled>
+                    </div>
+                </div>
+                <a href='delete.php' class="btn btn-danger">Delete Account</a>
+                <input type='submit' value='Update' class="btn btn-dark">
+                <a href='index.php' class="btn btn-secondary">Cancel</a>
             </form>
         </div>
     </body>

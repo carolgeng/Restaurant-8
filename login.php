@@ -32,22 +32,31 @@ session_start();
     }
 ?>
 
-<!doctype html>
 <html>
     <head>
         <title>Login</title>
         <style>
-            
         </style>
     </head>
     <body>
-        <div id='box'>
-            <h1>Login</h1>
-            <form method='post'>
-                <input type='text' name='email' autofocus=true> <br><br>
-                <input type='password' name='password'> <br><br>
-                <input type='submit' value='Login'> <br><br>
-                <a href='signup.php'>Sign Up</a> <br><br>
+        <div class='card mx-auto w-75'>
+            <h1 class="card-header">Login</h1>
+            <form method='post' class="card-body">
+                <div class='row'>
+                    <div class='col'>
+                        Email:
+                        <input type='text' class="form-control" name='email' autofocus=true>
+                    </div>
+                </div>
+                <div class='row'>
+                    <div class='col'>
+                        Password:
+                        <input type='password' class="form-control" name='password'>
+                    </div>
+                </div>
+                
+                <input type='submit' value='Login' class="btn btn-dark">
+                <a href='signup.php' class="btn btn-secondary">Sign Up</a>
             </form>
         </div>
     </body>
