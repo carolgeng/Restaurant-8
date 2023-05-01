@@ -15,4 +15,10 @@ function check_login($conn) {
     header("Location: login.php");
     die;
 }
+
+function change_type($conn, $id, $type) {
+    $query = "update users set type='$type' WHERE user_id = '$id'";
+    $result = mysqli_query($conn, $query);
+    header("Location: accounts.php");
+}
 ?>
