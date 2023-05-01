@@ -80,48 +80,53 @@ session_start();
         </style>
     </head>
     <body>
-        <div class='card mx-auto w-75'>
-            <h1 class="card-header">Signup</h1>
-            <form method='post' class="card-body">
-                <div class='row'>
-                    <div class='col'>
-                        Email:
-                        <input type="text" class="form-control" name='email' autofocus=true>
+        <div class="h-100 d-flex align-items-center justify-content-center min-vh-100">
+            <div class='card mx-auto w-75'>
+                <h1 class="card-header">Signup</h1>
+                <form method='post' class="card-body">
+                    <div class='row'>
+                        <div class='col'>
+                            Email:
+                            <input type="text" class="form-control" name='email' autofocus=true>
+                        </div>
                     </div>
-                </div>
-                <div class='row'>
-                    <div class='col'>
-                        Password:
-                        <input type='password' class="form-control" name='password'>
+                    <div class='row'>
+                        <div class='col'>
+                            Password:
+                            <input type='password' class="form-control" name='password'>
+                        </div>
+                        <div class='col'>
+                            Confirm Password:
+                            <input type='password' class="form-control" name='cpassword'>
+                        </div>
                     </div>
-                    <div class='col'>
-                        Confirm Password:
-                        <input type='password' class="form-control" name='cpassword'>
+                    <div class='row'>
+                        <div class='col'>
+                            First Name:
+                            <input type='text' class="form-control" placeholder="First" name='fname'>
+                        </div>
+                        <div class='col'>
+                            Last Name:
+                            <input type='text' class="form-control" placeholder="Last" name='lname'>
+                        </div>
                     </div>
-                </div>
-                <div class='row'>
-                    <div class='col'>
-                        First Name:
-                        <input type='text' class="form-control" placeholder="First" name='fname'>
+                    <div class='row'>
+                        <div class='col'>
+                            (Optional) Phone: 
+                            <input type='text' class="form-control" placeholder="111-111-1111" name='phone'>
+                        </div>
+                        <div class='col-4'>
+                            Permission Code:
+                            <input type='password' class="form-control" name='code'>
+                        </div>
                     </div>
-                    <div class='col'>
-                        Last Name:
-                        <input type='text' class="form-control" placeholder="Last" name='lname'>
+                    <br>
+                    <div class="d-grid gap-2">
+                        <input type='submit' value='Signup' class="btn btn-outline-dark">
+                        <a href='login.php' class="btn btn-outline-primary">Login</a>
                     </div>
-                </div>
-                <div class='row'>
-                    <div class='col'>
-                        (Optional) Phone: 
-                        <input type='text' class="form-control" placeholder="111-111-1111" name='phone'>
-                    </div>
-                    <div class='col-4'>
-                        Permission Code:
-                        <input type='password' class="form-control" name='code'>
-                    </div>
-                </div>
-                <input type='submit' value='Signup' class="btn btn-dark">
-                <a href='login.php' class="btn btn-secondary">Login</a>
-            </form>
+                </form>
+            </div>
         </div>
     </body>
 </html>

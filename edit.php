@@ -116,9 +116,12 @@ session_start();
                         <input type="text" class="form-control" value=<?php echo $row['type'] ?> disabled>
                     </div>
                 </div>
-                <a href='delete.php' class="btn btn-danger">Delete Account</a>
-                <input type='submit' value='Update' class="btn btn-dark">
-                <a href='index.php' class="btn btn-secondary">Cancel</a>
+                <div class="d-grid gap-2">
+                    <a href='delete.php' class="btn btn-outline-danger">Delete Account</a>
+                    <input type='submit' value='Update' class="btn btn-outline-dark">
+                    <!-- <a href='index.php' class="btn btn-outline-secondary">Cancel</a> -->
+                </div>
+                
             </form>
         </div>
     </body>

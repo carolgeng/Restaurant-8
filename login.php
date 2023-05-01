@@ -39,25 +39,29 @@ session_start();
         </style>
     </head>
     <body>
-        <div class='card mx-auto w-75'>
-            <h1 class="card-header">Login</h1>
-            <form method='post' class="card-body">
-                <div class='row'>
-                    <div class='col'>
-                        Email:
-                        <input type='text' class="form-control" name='email' autofocus=true>
+        <div class="h-100 d-flex align-items-center justify-content-center min-vh-100">
+            <div class='card mx-auto w-50'>
+                <h1 class="card-header">Login</h1>
+                <form method='post' class="card-body">
+                    <div class='row'>
+                        <div class='col'>
+                            Email:
+                            <input type='text' class="form-control" name='email' autofocus=true>
+                        </div>
                     </div>
-                </div>
-                <div class='row'>
-                    <div class='col'>
-                        Password:
-                        <input type='password' class="form-control" name='password'>
+                    <div class='row'>
+                        <div class='col'>
+                            Password:
+                            <input type='password' class="form-control" name='password'>
+                        </div>
                     </div>
-                </div>
-                
-                <input type='submit' value='Login' class="btn btn-dark">
-                <a href='signup.php' class="btn btn-secondary">Sign Up</a>
-            </form>
+                    <br>
+                    <div class="d-grid gap-2">
+                        <input type='submit' value='Login' class="btn btn-outline-dark w-100">
+                        <a href='signup.php' class="btn btn-outline-primary w-100">Sign Up</a>
+                    </div>  
+                </form>
+            </div>
         </div>
     </body>
 </html>
