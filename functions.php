@@ -15,5 +15,4 @@ function check_login($conn) {
     header("Location: login.php");
     die;
 }
-
 ?>

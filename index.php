@@ -1,7 +1,6 @@
 <?php
 session_start();
-    include("db.php");
-    include("functions.php");
+    include("header.php");
 
     $user_data = check_login($conn);
 ?>

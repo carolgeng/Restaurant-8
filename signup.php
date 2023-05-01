@@ -13,6 +13,8 @@ session_start();
         $last_name = $_POST['lname'];
         $phone = $_POST['phone'];
         $valid_entries = True;
+        $type = "customer";
+        $code = $_POST['code'];
 
         #check if any required fields are missing
         if(empty($email)) {
@@ -50,12 +52,18 @@ session_start();
             $valid_entries = False;
         }
 
+        if($code == "admin") {
+            $type = "admin";
+        } else if ($code == "employee") {
+            $type = "employee";
+        }
+
         if($valid_entries) {
             //save to database
             if(empty($phone)) {
-                $query = "insert into users (first_name, last_name, email, password) values ('$first_name', '$last_name', '$email', '$password')";
+                $query = "insert into users (first_name, last_name, email, password, type) values ('$first_name', '$last_name', '$email', '$password', '$type')";
             } else {
-                $query = "insert into users (first_name, last_name, phone, email, password) values ('$first_name', '$last_name', '$phone', '$email', '$password')";
+                $query = "insert into users (first_name, last_name, phone, email, password, type) values ('$first_name', '$last_name', '$phone', '$email', '$password', '$type')";
             }
             mysqli_query($conn, $query);
             header('Location: login.php');
@@ -81,6 +89,8 @@ session_start();
                 <p><input type='password' name='password'></p>
                 Confirm Password:
                 <p><input type='password' name='cpassword'></p>
+                Permission Code:
+                <p><input type='password' name='code'></p>
                 Name:
                 <p><input type='text' placeholder="First" name='fname'></p>
                 <p><input type='text' placeholder="Last" name='lname'></p>
