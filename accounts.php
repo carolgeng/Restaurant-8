@@ -1,5 +1,6 @@
 <?php
 session_start();
+    include("db.php");
     include("header.php");
 
     $user_data = check_login($conn);
@@ -12,6 +13,7 @@ session_start();
 <html>
     <head>
         <title>Accounts</title>
+        
     </head>
     <body>
         <div class="container">
@@ -44,7 +46,7 @@ session_start();
                                         <?php echo $row['type'] ?>
                                     </button>
                                     <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
-                                        <span class="visually-hidden">Toggle Dropright</span>
+                                        <span class="visually-hidden"></span>
                                     </button>
                                     <ul class="dropdown-menu">
                                         <?php if ($row['type'] != 'admin') { ?>
