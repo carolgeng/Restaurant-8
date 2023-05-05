@@ -25,7 +25,7 @@ session_start();
         mysqli_close($conn);
     }
 ?>
-
+<!-- php for submit -->
 <!-- category -->
 <html>
     <head>
