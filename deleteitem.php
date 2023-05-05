@@ -1,3 +1,6 @@
+<!-- Carol Geng, entire file -->
+<!-- This is the delete function for items to be deleted from the menu which is only allowed for the admin-->
+
 <?php
 session_start();
     include('db.php');

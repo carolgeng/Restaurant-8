@@ -1,3 +1,8 @@
+<!-- Carol Geng, entire file -->
+<!-- This is the add function for items to be added to the menu which is only allowed for the admin-->
+
+
+
 <?php
 session_start();
 

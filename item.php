@@ -1,9 +1,12 @@
+<!-- Carol Geng, entire file -->
+<!-- These are the individual items that you can delete or update when you click to edit an item-->
+
 <?php
 session_start();
-
+    // add header
     include("header.php");
     
-    
+    // load in information 
     if (!empty($_GET['id'])) {
         $id = $_GET['id'];
         $row = get_item($conn, $id);
@@ -11,7 +14,7 @@ session_start();
     else{
         header('Location: edititem.php');
     }
-    
+
     if($_SERVER['REQUEST_METHOD'] == 'POST') {
         //something was posted
         $name = $_POST['item_name'];
@@ -35,11 +38,12 @@ session_start();
         }
 
         if($valid_entries) {
-            //save to database
+            //save and update to database
             
             $query = "update `items` set item_name='$name',item_price='$price',category='$category' WHERE item_id = '$id'";
             
             $result = mysqli_query($conn, $query);
+            // redirect if update was successful
             if ($result) {   
                 echo "Updated successfully";
                 header('Location: edititem.php');
@@ -50,7 +54,7 @@ session_start();
         }
     }
 ?>
-
+<!-- styling for page  -->
 <!doctype html>
 <html>
     <head>
@@ -83,7 +87,7 @@ session_start();
                     </div>
                 </div>
                 
-
+                <!-- delete item area, redirect and follows information in deleteitem.php -->
                 <div class="d-grid gap-2">
                     <a href='deleteitem.php?id=<?php echo $row['item_id']?>' class="btn btn-outline-danger">Delete Item</a>
                     <input type='submit' value='Update' class="btn btn-outline-dark">

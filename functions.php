@@ -21,6 +21,8 @@ function change_type($conn, $id, $type) {
     $result = mysqli_query($conn, $query);
     header("Location: accounts.php");
 }
+// Carol Geng, get_item function
+// gets items to be loaded in and to be used if you are logged in
 
 function get_item($conn, $id) {
     if(isset($_SESSION['email'])) {
