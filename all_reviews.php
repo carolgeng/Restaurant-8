@@ -18,7 +18,9 @@ session_start();
    <div class="heading"><h1>Reviews</h1></div>
 
    <div class="box-container">
+    <?php if ($user_data['type'] == 'customer'){?>
    <div class="heading"> <a href="add_review.php?>" class="inline-btn" style="margin-top: 0;">Add Review</a></div>
+   <?php } ?>
 </br>
    <!-- <?php 
             $sql = "SELECT * FROM `reviews`"; 
@@ -61,7 +63,7 @@ session_start();
                             <td><?php echo $row['rating'] ?></td>
                             <td><?php echo $row['description'] ?></td>
                             <td>
-                            <?php if ($user_data['user_id'] == $user_id){?>
+                            <?php if ($user_data['user_id'] == $user_id || $user_data['type'] == 'admin'){?>
                             <a class="btn btn-dark" href="delete_review.php?id=<?php echo $row['review_id']?>">Delete</a>
                             <a class="btn btn-dark" href="update_review.php?id=<?php echo $row['review_id']?>">Edit</a>
 
