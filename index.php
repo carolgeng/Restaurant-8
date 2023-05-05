@@ -9,9 +9,16 @@ session_start();
     <head>
         <title>Landing</title>
     </head>
-    <body>
-        <h1>This is the landing page</h1>
+
+    <body style="text-align: center; background: url(restaurant.jpeg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;">
+    <div style="background-color: rgba(0, 0, 0, 0.5); padding: 20px;">
+        <h1 style="color: white;">Welcome to Restaurant 8!</h1>
         <br>
-        <h4>Hello, <?php echo $user_data['first_name']; ?></h4>
+        <h4 style="color: white;">Hello, <?php echo $user_data['first_name']; ?>, we're excited to see you here!</h4>
+    </div>
     </body>
 </html>
