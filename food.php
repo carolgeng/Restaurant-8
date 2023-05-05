@@ -53,6 +53,7 @@ session_start();
                         <div class="card-body">
                         <h5 class="card-title">' . $name . '</h5>
                         <h6 class="card-title">' . $cat . ' &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; $' . $price . '</h6>
+                        Quantity: <a value = "0" id='.$id. '>0</a> &emsp; <button class="btn btn-primary" type="button" onClick="onClick('.$id. ')">Add</button> <button class="btn btn-primary" type="button" onClick="onClick2('.$id. ')">Remove</button> 
 
                         </div>
                     </div>
@@ -60,18 +61,6 @@ session_start();
                     </div>';
             }
         ?>
-        echo '<div class="col-xs-3 col-sm-3 col-md-3">
-                    <div class="card" style="width: 18rem;">
-                        <img src="img/card-'.$id. '.jpg" class="card-img-top" alt="image for this category" width="249px" height="270px">
-                        <div class="card-body">
-                        <h5 class="card-title">' . $name . '</h5>
-                        <h6 class="card-title">' . $cat . ' &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; $' . $price . '</h6>
-                        
-                        </div>
-                    </div>
-                    
-                    </div>';
-            }
         
                 </div>
                 <br>
