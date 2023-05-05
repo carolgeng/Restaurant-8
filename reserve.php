@@ -1,3 +1,10 @@
+<!-- Caroline Mejia, entire file -->
+<!-- This is the reservations page of the website-->
+<!-- In this page, you can view information regarding any existing reservations you have -->
+<!-- In this page, you can also create, edit, or delete a reservation -->
+<!-- By clicking on the correspnonding button, which will take you to the specified CRUD page -->
+
+
 <?php
 session_start();
     include("db.php");

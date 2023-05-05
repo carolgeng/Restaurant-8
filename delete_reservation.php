@@ -1,3 +1,8 @@
+<!-- Caroline Mejia, entire file -->
+<!-- This is the delete function for the reservations-->
+<!-- If any reservations exists and the delete button in reserve.php is pressed, -->
+<!-- this file ith delete the entry from the reservations table -->
+
 <?php
 session_start();
     include('db.php');

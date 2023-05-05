@@ -1,3 +1,8 @@
+<!-- Caroline Mejia, entire file -->
+<!-- This is the create page for the reservations-->
+<!-- In this page, you can view the email, first name, and last name you reservtion will be created under -->
+<!-- (Info depends on the account info, only viewable) -->
+<!-- In this page, you can also set the datetime and number of guests for your reservation -->
 <?php
 session_start();
     include("header.php");
