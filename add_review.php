@@ -10,6 +10,8 @@ session_start();
         change_type($conn, $_GET['id'], $_GET['type']);
     }
 
+   //  get review data and insert into database
+
     if(isset($_POST['submit'])){
         
         $user_id = $user_data['user_id'];
