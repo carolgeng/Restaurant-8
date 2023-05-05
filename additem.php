@@ -1,15 +1,13 @@
 <!-- Carol Geng, entire file -->
 <!-- This is the add function for items to be added to the menu which is only allowed for the admin-->
 
-
-
 <?php
 session_start();
 
     include("header.php");
     
     if($_SERVER['REQUEST_METHOD'] == 'POST') {
-        //something was posted
+        //something was posted/ information to be added into database
         $name = $_POST['item_name'];
         $price = $_POST['item_price'];
         $category = $_POST['category'];
@@ -31,7 +29,7 @@ session_start();
         }
 
         if($valid_entries) {
-            //save to database
+            //save and insert to database
             
             $query = "insert into items (item_name, item_price, category) values ('$name', '$price', '$category')";
 
@@ -46,7 +44,7 @@ session_start();
         }
     }
 ?>
-
+<!-- styling for add item page -->
 <!doctype html>
 <html>
     <head>
@@ -58,6 +56,7 @@ session_start();
         <div class='card mx-auto w-75'>
             <h1 class="card-header">Add Item</h1>
 
+            <!-- form information -->
             <form method='post' class="card-body">
                 <div class='row'>
                     <div class='col'>
@@ -79,7 +78,7 @@ session_start();
                     </div>
                 </div>
                 
-
+                <!-- submit button for add page -->
                 <div class="d-grid gap-2">
                     <input type='submit' value='Add' class="btn btn-outline-dark">
                     <!-- <a href='index.php' class="btn btn-outline-secondary">Cancel</a> -->

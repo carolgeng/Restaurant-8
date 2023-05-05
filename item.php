@@ -91,7 +91,6 @@ session_start();
                 <div class="d-grid gap-2">
                     <a href='deleteitem.php?id=<?php echo $row['item_id']?>' class="btn btn-outline-danger">Delete Item</a>
                     <input type='submit' value='Update' class="btn btn-outline-dark">
-                    <!-- <a href='index.php' class="btn btn-outline-secondary">Cancel</a> -->
                 </div>
                 
             </form>
