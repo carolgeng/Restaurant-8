@@ -5,13 +5,16 @@
 session_start();
     include('db.php');
     echo "before";
+    // check item id to be deleted
     if (!empty($_GET['id'])) {
         $id = $_GET['id'];
-    
+        // check if logged in
         if(isset($_SESSION['email'])) {
             echo "inside";
+            // delete item
             $query = "delete from items where item_id = '$id'";
             $result = mysqli_query($conn, $query);
+            // redirect to edit items page
             if ($result) {
                 header('Location: edititem.php');
             } else {

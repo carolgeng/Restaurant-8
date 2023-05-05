@@ -6,17 +6,16 @@ session_start();
     include("db.php");
     include("header.php");
 
+    // check if logged in
     $user_data = check_login($conn);
     if (!empty($_GET['type']) && !empty($_GET['id'])) {
         change_type($conn, $_GET['id'], $_GET['type']);
     }
 
-    // PHP code in confirm.php
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         // Retrieve form data
         $user_id = $_POST['user_id'];
         $order_total = $_POST['order_total'];
-        // TODO: Validate form data
     
         // Insert data into database
         $sql = "INSERT INTO users (name) VALUES ('$name')";
@@ -86,6 +85,7 @@ session_start();
 
 var quantities = {};
 
+// increment quantities
 function onClick(id) {
   if (!(id in quantities)) {
     quantities[id] = 0;
@@ -94,6 +94,7 @@ function onClick(id) {
   document.getElementById(id).innerHTML = quantities[id];
 }
 
+// delete quantities
 function onClick2(id) {
   if (!(id in quantities)) {
     quantities[id] = 0;
