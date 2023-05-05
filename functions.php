@@ -39,4 +39,19 @@ function get_item($conn, $id) {
     die;
 }
 
+function get_review($conn, $id) {
+    if(isset($_SESSION['email'])) {
+        $query = "select * from reviews where review_id = '$id'";
+        $result = mysqli_query($conn, $query);
+        if($result && mysqli_num_rows($result) > 0) {
+            $item_data = mysqli_fetch_assoc($result);
+            return $item_data;
+        }
+    }
+
+    //redirect to reviews page
+    header("Location: all_reviews.php");
+    die;
+}
+
 ?>
