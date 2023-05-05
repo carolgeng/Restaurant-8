@@ -9,7 +9,7 @@ session_start();
     if (!empty($_GET['type']) && !empty($_GET['id'])) {
         change_type($conn, $_GET['id'], $_GET['type']);
     }
-     
+
     if(isset($_POST['submit'])){
         
         $user_id = $user_data['user_id'];
@@ -21,7 +21,8 @@ session_start();
         $add_review = $conn->prepare("INSERT INTO `reviews`(user_id, description, rating) VALUES(?,?,?)");
         $add_review->execute([$user_id, $description, $rating]);
         $success_msg[] = 'Review added!';
-        
+        header('location:all_reviews.php');
+        die;
     }
 ?>
 
@@ -53,4 +54,6 @@ session_start();
 
 </section>
 </div>
+
+<!-- end post review -->
 
