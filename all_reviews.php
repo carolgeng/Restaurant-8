@@ -1,10 +1,17 @@
 <!-- Annie Ren, entire file -->
 
+<!-- Description:
+        shows table of all reviews
+        gives customer type users ability to add reviews, delete and edit their own reviews
+        gives admins ability to delete reviews-->
+
 <?php
 session_start();
     include("db.php");
     include("header.php");
 
+
+    // get user data
     $user_data = check_login($conn);
     if (!empty($_GET['type']) && !empty($_GET['id'])) {
         change_type($conn, $_GET['id'], $_GET['type']);
@@ -16,6 +23,8 @@ session_start();
 <section class="all-posts">
 
    <div class="heading"><h1>Reviews</h1></div>
+
+    <!-- show add review functionality only if user type is a customer -->
 
    <div class="box-container">
     <?php if ($user_data['type'] == 'customer'){?>
@@ -63,11 +72,18 @@ session_start();
                             <td><?php echo $row['rating'] ?></td>
                             <td><?php echo $row['description'] ?></td>
                             <td>
+
+                            <!--Show edit and delete options only if it is review the user posted -->
+                            <!-- Show delete options if user is an admin -->
+
                             <?php if ($user_data['user_id'] == $user_id || $user_data['type'] == 'admin'){?>
                             <a class="btn btn-dark" href="delete_review.php?id=<?php echo $row['review_id']?>">Delete</a>
-                            <a class="btn btn-dark" href="update_review.php?id=<?php echo $row['review_id']?>">Edit</a>
 
                             <?php } ?>
+
+                            <?php if ($user_data['user_id'] == $user_id){?>
+                            <a class="btn btn-dark" href="update_review.php?id=<?php echo $row['review_id']?>">Edit</a>
+                            <?php }?>
                             </td>
                             </tr>
                             <?php

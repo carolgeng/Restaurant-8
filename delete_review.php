@@ -1,12 +1,17 @@
+<!-- Annie Ren entire file -->
+
 <?php
 session_start();
     include('db.php');
+
+    #get review_id
 
     if (!empty($_GET['id'])) {
         $review_id = $_GET['id'];
     }
 
-    #If res_id is not empty proceed to delete the specified entry 
+
+    #delete review from table if it matches review_id
     if(isset($review_id)){
         $query = "delete from reviews where review_id = '$review_id'";
         $result = mysqli_query($conn, $query);

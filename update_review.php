@@ -5,7 +5,8 @@ session_start();
     
     include("header.php");
         
-        
+    # get review_id
+    
     if (!empty($_GET['id'])) {
         $review_id = $_GET['id'];
         $row = get_review($conn, $review_id);
@@ -15,7 +16,9 @@ session_start();
     }
 
     if($_SERVER['REQUEST_METHOD'] == 'POST') {
-        //something was posted
+        
+        // get review id, updated rating and description
+
         $review_id = $row['review_id'];
         $rating = $_POST['rating'];
         $description = $_POST['description'];
@@ -42,7 +45,7 @@ session_start();
 </head>
 <body>
 
-<!-- post a review -->
+<!-- update a review -->
 <div> 
 <section class="account-form">
 
