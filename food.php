@@ -7,6 +7,23 @@ session_start();
     if (!empty($_GET['type']) && !empty($_GET['id'])) {
         change_type($conn, $_GET['id'], $_GET['type']);
     }
+
+    // PHP code in confirm.php
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        // Retrieve form data
+        $user_id = $_POST['user_id'];
+        $order_total = $_POST['order_total'];
+        // TODO: Validate form data
+    
+        // Insert data into database
+        $sql = "INSERT INTO users (name) VALUES ('$name')";
+        if (mysqli_query($conn, $sql)) {
+        echo "Data added to database successfully";
+        } else {
+        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+        }
+        mysqli_close($conn);
+    }
 ?>
 
 <!-- category -->
@@ -50,7 +67,7 @@ session_start();
                 <br>
                 <br>
                 <div style="text-align:right;">
-                <form action="confirm.php">
+                <form action="confirm.php" method="POST">
                     <button class="btn btn-primary" type="submit">Submit</button>
                 </form>
                  </div>
@@ -61,6 +78,7 @@ session_start();
     </body>
 </html>
 
+<!-- javascript for quantities -->
 <script>
 
 var quantities = {};

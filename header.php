@@ -25,7 +25,12 @@
                 <ul class="navbar-nav">
                 <?php if ($user_data['type'] == 'admin') { ?>
                     <li class="nav-item">
-                        <a class='nav-link' href='accounts.php'>Manage</a>
+                        <a class='nav-link' href='accounts.php'>Manage Accounts</a>
+                    </li>
+                <?php } ?>
+                <?php if ($user_data['type'] == 'admin') { ?>
+                    <li class="nav-item">
+                        <a class='nav-link' href='edititem.php'>Manage Items</a>
                     </li>
                 <?php } ?>
                 <li class="nav-item">
