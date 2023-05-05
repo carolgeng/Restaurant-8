@@ -30,6 +30,9 @@
                 <?php } ?>
                 <li class="nav-item">
                     <a class="nav-link" href="food.php">Order</a>
+                </li> 
+                <li class="nav-item">
+                    <a class="nav-link" href="reviews.php">Reviews</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="edit.php">Account</a>
