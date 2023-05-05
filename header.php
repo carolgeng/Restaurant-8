@@ -21,13 +21,16 @@
     <body>
         <nav class="navbar navbar-expand-sm bg-dark navbar-dark mb-5">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">Restaurant 8</a>
+                <a class="navbar-brand" href="index.php">Restaurant 8</a>
                 <ul class="navbar-nav">
                 <?php if ($user_data['type'] == 'admin') { ?>
                     <li class="nav-item">
                         <a class='nav-link' href='accounts.php'>Manage</a>
                     </li>
                 <?php } ?>
+                <li class="nav-item">
+                    <a class="nav-link" href="food.php">Order</a>
+                </li>
                 <li class="nav-item">
                     <a class="nav-link" href="edit.php">Account</a>
                 </li>
