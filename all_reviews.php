@@ -61,8 +61,11 @@ session_start();
                             <td><?php echo $row['rating'] ?></td>
                             <td><?php echo $row['description'] ?></td>
                             <td>
+                            <?php if ($user_data['user_id'] == $user_id){?>
                             <a class="btn btn-dark" href="delete_review.php?id=<?php echo $row['review_id']?>">Delete</a>
                             <a class="btn btn-dark" href="update_review.php?id=<?php echo $row['review_id']?>">Edit</a>
+
+                            <?php } ?>
                             </td>
                             </tr>
                             <?php

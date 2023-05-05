@@ -16,7 +16,7 @@ session_start();
 
     if($_SERVER['REQUEST_METHOD'] == 'POST') {
         //something was posted
-        $review_id = $_POST['review_id'];
+        $review_id = $row['review_id'];
         $rating = $_POST['rating'];
         $description = $_POST['description'];
 
