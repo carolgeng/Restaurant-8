@@ -1,3 +1,10 @@
+<!-- Mengting Cao, entire file -->
+
+<!-- Description:
+        Form a new user can use to register an account on our website
+        All fields are required except phone and code
+        code is a secret code the user can input to get specific permissions-->
+
 <?php
 session_start();
 

@@ -1,3 +1,10 @@
+<!-- Mengting Cao, entire file -->
+
+<!-- Description:
+        shows table of all users
+        only the admin can access this page
+        Admins can change every user's permissions-->
+
 <?php
 session_start();
     include("db.php");

@@ -1,3 +1,9 @@
+<!-- Mengting Cao, entire file -->
+
+<!-- Description:
+        Form that user can use to login with email and password
+        Checks that the email and password combination is in the database-->
+        
 <?php
 session_start();
 

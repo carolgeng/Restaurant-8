@@ -1,3 +1,8 @@
+<!-- Mengting Cao, entire file -->
+
+<!-- Description:
+        functionality to logout of user account-->
+
 <?php
 
 session_start();

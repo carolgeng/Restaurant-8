@@ -1,3 +1,12 @@
+<!-- Mengting Cao, entire file -->
+
+<!-- Description:
+        this file allows the user to update their own information
+        They can change first name, last name, phone number and password
+        They cannot change their email or permissions
+        The php also checks that all input fields are not empty
+        This page also has the button to delete the user's account-->
+
 <?php
 session_start();
 

@@ -1,3 +1,9 @@
+<!-- Mengting Cao, check login and change type functions -->
+
+<!-- Description:
+        Check login checks that the user is logged in and returns the user information
+        Change type update's type for the account that had their id passed in-->
+
 <?php
 
 function check_login($conn) {
