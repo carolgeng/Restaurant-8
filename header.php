@@ -40,6 +40,9 @@
                     <a class="nav-link" href="all_reviews.php">Reviews</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="reserve.php">Reservations</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="edit.php">Account</a>
                 </li>
                 <li class="nav-item">
