@@ -22,8 +22,10 @@ session_start();
     </head>
     <body>
         <div class='card mx-auto w-75'>
-            <h1 class="card-header d-flex">Current Reservations   
-            <a href="create_reservation.php" class="btn btn-success ms-auto">Create New Reservation</a>
+            <h1 class="card-header d-flex">Current Reservations 
+            <?php if ($user_data['type'] == 'customer') { ?>
+                    <a href="create_reservation.php" class="btn btn-success ms-auto">Create New Reservation</a>
+                <?php } ?>  
             </h1>
             <div class="table-responsive">
                 <table class="table table-hover">
@@ -39,8 +41,10 @@ session_start();
                     </thead>
                     <tbody>
                         <?php
-                            #If a reservation exists, display the reservations made by the user
-                            #that is currently logged in
+                        if ($user_data['type'] == 'admin') { 
+                            $query = "select * from reservations";                            
+                        }
+                        else{
                             $email = $user_data['email'];
                             $query_id = "select user_id from users where email = '$email'";
                             $result_id = mysqli_query($conn, $query_id);
@@ -48,14 +52,21 @@ session_start();
                             $id = $row_id['user_id'];
 
                             $query = "select * from reservations inner join users on users.user_id='$id'";
-
+                        } 
+                        ?>
+                        <?php
                             $result = mysqli_query($conn, $query);
                             if(mysqli_num_rows($result)!=0){
                                 while ($row = mysqli_fetch_assoc($result)) {
+                                    $res_user_id = $row['user_id'];
+                                    $query_users = "select * from users where user_id = '$res_user_id'";
+                                    $user_result = mysqli_query($conn, $query_users);
+                                    $user_row = mysqli_fetch_assoc($user_result);
+
                                     ?>
                                     <tr>
-                                    <td><?php echo $row['first_name'] ?></td>
-                                    <td><?php echo $row['last_name'] ?></td>
+                                    <td><?php echo $user_row['first_name'] ?></td>
+                                    <td><?php echo $user_row['last_name'] ?></td>
                                     <td><?php echo $row['res_date'] ?></td>
                                     <td><?php echo $row['guest_num'] ?></td>
 
