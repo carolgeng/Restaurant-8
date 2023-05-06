@@ -34,14 +34,13 @@ session_start();
 
                 <!-- show add review functionality only if user type is a customer -->
 
-                <div class="box-container">
-                    <?php if ($user_data['type'] == 'customer'){?>
-                    <div class="heading"> <a href="add_review.php?>" class="btn btn-success ms-auto"
-                            style="margin-top: 0;">Add
-                            Review</a></div>
-                    <?php } ?>
-                    </br>
-                    <!-- <?php 
+                <?php if ($user_data['type'] == 'customer'){?>
+                <div class="heading"> <a href="add_review.php?>" class="btn btn-success ms-auto"
+                        style="margin-top: 0;">Add Review</a>
+            </h1>
+            <?php } ?>
+            </br>
+            <!-- <?php 
             $sql = "SELECT * FROM `reviews`"; 
             $result = mysqli_query($conn, $sql);
             while($row = mysqli_fetch_assoc($result)){
@@ -64,15 +63,16 @@ session_start();
             }
     ?> -->
 
-                    <div class="container">
-                        <table class="table table-hover">
-                            <tbody>
-                                <?php
+            <div class="container">
+                <table class="table table-hover">
+                    <tbody>
+                        <?php
                         $query = "SELECT * FROM `reviews`"; 
                         $result = mysqli_query($conn, $query);
                         while ($row = mysqli_fetch_assoc($result)) {
                             ?>
-                            <thead class="table-dark">
+
+                        <thead class="table-dark">
                             <tr>
                             <th scope="col">User ID</th>
                             <th scope="col">Item Name</th>
@@ -81,8 +81,8 @@ session_start();
                             <th scope="col">Date</th>
         
                             </tr>
-                            </thead>
-                            <tr>
+                        </thead>
+                        <tr>
                             <td><?php echo $row['user_id'] ?></td>
                             <td><?php echo $item_name ?></td>
                             <td><?php echo $row['rating'] ?></td>
@@ -90,31 +90,31 @@ session_start();
                             <td><?php echo date("d-m-Y",strtotime($row['date'])) ?></td>
                             <td>
 
-                                        <!--Show edit and delete options only if it is review the user posted -->
-                                        <!-- Show delete options if user is an admin -->
+                                <!--Show edit and delete options only if it is review the user posted -->
+                                <!-- Show delete options if user is an admin -->
 
-                                        <?php if ($user_data['user_id'] == $user_id || $user_data['type'] == 'admin'){?>
-                                        <a class="btn btn-dark"
-                                            href="delete_review.php?id=<?php echo $row['review_id']?>">Delete</a>
+                                <?php if ($user_data['user_id'] == $user_id || $user_data['type'] == 'admin'){?>
+                                <a class="btn btn-dark"
+                                    href="delete_review.php?id=<?php echo $row['review_id']?>">Delete</a>
 
-                                        <?php } ?>
+                                <?php } ?>
 
-                                        <?php if ($user_data['user_id'] == $user_id){?>
-                                        <a class="btn btn-dark"
-                                            href="update_review.php?id=<?php echo $row['review_id']?>">Edit</a>
-                                        <?php }?>
-                                    </td>
-                                </tr>
-                                <?php
+                                <?php if ($user_data['user_id'] == $user_id){?>
+                                <a class="btn btn-dark"
+                                    href="update_review.php?id=<?php echo $row['review_id']?>">Edit</a>
+                                <?php }?>
+                            </td>
+                        </tr>
+                        <?php
                         }
                     ?>
-                            </tbody>
-                        </table>
-                    </div>
+                    </tbody>
+                </table>
+            </div>
 
-                </div>
+        </div>
 
-                <body>
+        <body>
 
 
     </section>
