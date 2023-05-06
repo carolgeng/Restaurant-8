@@ -61,7 +61,7 @@ session_start();
             <table class="table table-hover">
                 <thead class="table-dark">
                     <tr>
-                    <th scope="col">User ID</th>
+                    <th scope="col">User Name</th>
                     <th scope="col">Item Name</th>
                     <th scope="col">Rating</th>
                     <th scope="col">Description</th>
@@ -76,6 +76,7 @@ session_start();
                     while ($row = mysqli_fetch_assoc($result)) {
                         ?>
                     <tr>
+                        <?php $user_info = get_user($conn, $row['user_id']) ?>
                         <td><?php echo $row['user_id'] ?></td>
                         <td><?php echo $item_name ?></td>
                         <td><?php echo $row['rating'] ?></td>
