@@ -6,7 +6,7 @@
 <?php
 session_start();
     include('db.php');
-    echo "before";
+    #check if id was passed in when url redirect (in accounts page delete button)
     if (!empty($_GET['id'])) {
         $id = $_GET['id'];
         $query = "delete from users where user_id = '$id'";
@@ -17,7 +17,7 @@ session_start();
             echo "Error: " . mysqli_error($conn);
         }
     }
-    else{
+    else{ #if id was passed in when url redirect (in edit account delete button)
         if(isset($_SESSION['email'])) {
             $email = $_SESSION['email'];
             $query = "delete from users where email = '$email'";

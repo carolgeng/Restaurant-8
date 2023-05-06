@@ -9,12 +9,8 @@
     $password = "csce310";
     $dbname = "restaurant";
 
+    #connect to database using credentials
     $conn = mysqli_connect($servername, $username, $password, $dbname);
-
-    // if (!$conn) {
-    //     die("Connection failed: " . mysqli_connect_error());
-    // }
-    // echo "<p>Connected successfully</p>";
 ?>
 
 <!DOCTYPE html>

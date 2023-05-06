@@ -128,7 +128,7 @@ session_start();
                 <div class="d-grid gap-2">
                     <a href='delete.php' class="btn btn-outline-danger">Delete Account</a>
                     <input type='submit' value='Update' class="btn btn-outline-dark">
-                    <!-- <a href='index.php' class="btn btn-outline-secondary">Cancel</a> -->
+                    <a href='index.php' class="btn btn-outline-secondary">Cancel</a>
                 </div>
                 
             </form>
