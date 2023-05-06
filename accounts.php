@@ -32,6 +32,7 @@ session_start();
                     <th scope="col">Email</th>
                     <th scope="col">Phone</th>
                     <th scope="col">Type</th>
+                    <th scope="col">Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -66,6 +67,9 @@ session_start();
                                         <?php } ?>
                                     </ul>
                                 </div>
+                            </td>
+                            <td>
+                                <a href='delete.php?id=<?php echo $row['user_id']?>' class="btn btn-outline-danger">Delete Account</a>
                             </td>
                             </tr>
                             <?php
