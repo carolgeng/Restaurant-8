@@ -33,15 +33,22 @@
                         <a class='nav-link' href='edititem.php'>Manage Items</a>
                     </li>
                 <?php } ?>
+                <?php if ($user_data['type'] == 'admin') { ?>
+                    <li class="nav-item">
+                        <a class='nav-link' href='reserve.php'>Manage Reservations</a>
+                    </li>
+                <?php } ?>
                 <li class="nav-item">
                     <a class="nav-link" href="food.php">Order</a>
                 </li> 
                 <li class="nav-item">
                     <a class="nav-link" href="all_reviews.php">Reviews</a>
                 </li>
-                <li class="nav-item">
+                <?php if ($user_data['type'] == 'customer') { ?>
+                    <li class="nav-item">
                     <a class="nav-link" href="reserve.php">Reservations</a>
                 </li>
+                <?php } ?>
                 <li class="nav-item">
                     <a class="nav-link" href="edit.php">Account</a>
                 </li>
