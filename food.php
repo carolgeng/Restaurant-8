@@ -30,18 +30,20 @@ session_start();
 <!-- php for submit -->
 <!-- category -->
 <html>
-    <head>
-        <title>Order</title>
-    </head>
-    <body  style="background-color:rgb(230, 230, 250);">
-        <br>
-        <div class="container my-4 mb-5">
-        <div class="col-lg-2 text-center my-4" style="margin:auto;">     
+
+<head>
+    <title>Order</title>
+</head>
+
+<body style="background-color:rgb(230, 230, 250);">
+    <br>
+    <div class="container my-4 mb-5">
+        <div class="col-lg-2 text-center my-4" style="margin:auto;">
             <h1 class="text-center">Menu </h1>
         </div>
         <div class="row">
-        <!-- Fetch all the categories and use a loop to iterate through categories -->
-        <?php 
+            <!-- Fetch all the categories and use a loop to iterate through categories -->
+            <?php 
             $sql = "SELECT * FROM `items`"; 
             $result = mysqli_query($conn, $sql);
             while($row = mysqli_fetch_assoc($result)){
@@ -61,19 +63,15 @@ session_start();
                     </div>';
             }
         ?>
-        
-                </div>
-                <br>
-                <br>
-                <br>
-                <div style="text-align:right;">
-                <form action="confirm.php" method="POST">
-                    <button class="btn btn-primary" type="submit">Submit</button>
-                </form>
-                 </div>
-                
+
         </div>
-            
-        
-    </body>
+
+
+    </div>
+
+    </div>
+
+
+</body>
+
 </html>
