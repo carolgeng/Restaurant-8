@@ -1,3 +1,7 @@
+<!-- Mengting Cao, most of the file -->
+
+<!-- Description:
+        Displays navigation bar with links to pages -->
 <?php
     include("db.php");
     include("functions.php");

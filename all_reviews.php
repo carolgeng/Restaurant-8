@@ -38,6 +38,9 @@ session_start();
 
             $review_id = $row['review_id'];
             $user_id = $row['user_id'];
+            $item_id = $row['item_id'];
+            $item_info = get_item($conn,$item_id);
+            $item_name = $item_info['item_name'];
             $date = $row['review_date'];
             $description = $row['description'];
             $rating = $row['rating'];
@@ -62,6 +65,7 @@ session_start();
                             <thead class="table-dark">
                             <tr>
                             <th scope="col">User ID</th>
+                            <th scope="col">Item Name</th>
                             <th scope="col">Rating</th>
                             <th scope="col">Description</th>
         
@@ -69,6 +73,7 @@ session_start();
                             </thead>
                             <tr>
                             <td><?php echo $row['user_id'] ?></td>
+                            <td><?php echo $item_name ?></td>
                             <td><?php echo $row['rating'] ?></td>
                             <td><?php echo $row['description'] ?></td>
                             <td>

@@ -55,8 +55,6 @@ session_start();
                         <div class="card-body">
                         <h5 class="card-title">' . $name . '</h5>
                         <h6 class="card-title">' . $cat . ' &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; $' . $price . '</h6>
-                        Quantity: <a value = "0" id='.$id. '>0</a> &emsp; <button class="btn btn-primary" type="button" onClick="onClick('.$id. ')">Add</button> <button class="btn btn-primary" type="button" onClick="onClick2('.$id. ')">Remove</button> 
-
                         </div>
                     </div>
                     
@@ -79,31 +77,3 @@ session_start();
         
     </body>
 </html>
-
-<!-- javascript for quantities -->
-<script>
-
-var quantities = {};
-
-// increment quantities
-function onClick(id) {
-  if (!(id in quantities)) {
-    quantities[id] = 0;
-  }
-  quantities[id] += 1;
-  document.getElementById(id).innerHTML = quantities[id];
-}
-
-// delete quantities
-function onClick2(id) {
-  if (!(id in quantities)) {
-    quantities[id] = 0;
-  }
-  quantities[id] -= 1;
-  if (quantities[id] < 0) {
-    quantities[id] = 0;
-  }
-  document.getElementById(id).innerHTML = quantities[id];
-}
-
-</script>

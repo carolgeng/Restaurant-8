@@ -1,3 +1,8 @@
+<!-- Mengting Cao, entire file -->
+
+<!-- Description:
+        this file deletes the user account when called-->
+
 <?php
 session_start();
     include('db.php');
