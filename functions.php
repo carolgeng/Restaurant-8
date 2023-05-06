@@ -27,6 +27,22 @@ function change_type($conn, $id, $type) {
     $result = mysqli_query($conn, $query);
     header("Location: accounts.php");
 }
+
+function get_user($conn, $id) {
+    if(isset($_SESSION['email'])) {
+        $query = "select * from users where user_id = '$id' limit 1";
+        $result = mysqli_query($conn, $query);
+        if($result && mysqli_num_rows($result) > 0) {
+            $item_data = mysqli_fetch_assoc($result);
+            return $item_data;
+        }
+    }
+
+    //redirect to login page
+    header("Location: login.php");
+    die;
+}
+
 // Carol Geng, get_item function
 // gets items to be loaded in and to be used if you are logged in
 

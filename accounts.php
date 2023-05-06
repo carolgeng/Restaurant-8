@@ -6,12 +6,17 @@
         Admins can change every user's permissions-->
 
 <?php
+#resume login sessoin
 session_start();
+    #include database login and navigation bar header
     include("db.php");
     include("header.php");
 
+    #get current user information
     $user_data = check_login($conn);
+    #check if there is an id and type passed in
     if (!empty($_GET['type']) && !empty($_GET['id'])) {
+        #change the user type for the id if it is passed in
         change_type($conn, $_GET['id'], $_GET['type']);
     }
 ?>
@@ -37,8 +42,10 @@ session_start();
                 </thead>
                 <tbody>
                     <?php
+                        #Select all the users from the database
                         $query = "select * from users";
                         $result = mysqli_query($conn, $query);
+                        #iterate through all the users in the result displaying the information for each
                         while ($row = mysqli_fetch_assoc($result)) {
                             ?>
                             <tr>
