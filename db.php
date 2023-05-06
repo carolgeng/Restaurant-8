@@ -1,3 +1,8 @@
+<!-- Mengting Cao, entire file -->
+
+<!-- Description:
+        this file connects other files to the database when called-->
+
 <?php 
     $servername = "localhost";
     $username = "admin"; 
