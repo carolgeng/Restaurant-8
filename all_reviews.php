@@ -26,21 +26,15 @@ session_start();
 </head>
 
 <body>
-
-    <section class="all-posts">
-
-        <div class='card mx-auto w-75'>
-            <h1 class="card-header d-flex">Reviews
-
-                <!-- show add review functionality only if user type is a customer -->
-
-                <?php if ($user_data['type'] == 'customer'){?>
-                <div class="heading"> <a href="add_review.php?>" class="btn btn-success ms-auto"
-                        style="margin-top: 0;">Add Review</a>
-            </h1>
+    <div class='card mx-auto w-75'>
+        <h1 class="card-header d-flex">Reviews
+            <?php if ($user_data['type'] == 'customer') { ?>
+            <a href="add_review.php" class="btn btn-success ms-auto">Add Review</a>
             <?php } ?>
-            </br>
-            <!-- <?php 
+        </h1>
+
+        </br>
+        <!-- <?php 
             $sql = "SELECT * FROM `reviews`"; 
             $result = mysqli_query($conn, $sql);
             while($row = mysqli_fetch_assoc($result)){
@@ -63,56 +57,56 @@ session_start();
             }
     ?> -->
 
-            <div class="container">
-                <table class="table table-hover">
-                    <tbody>
-                        <?php
+        <div class="container">
+            <table class="table table-hover">
+                <tbody>
+                    <?php
                         $query = "SELECT * FROM `reviews`"; 
                         $result = mysqli_query($conn, $query);
                         while ($row = mysqli_fetch_assoc($result)) {
                             ?>
 
-                        <thead class="table-dark">
-                            <tr>
-                                <th scope="col">User ID</th>
-                                <th scope="col">Item Name</th>
-                                <th scope="col">Rating</th>
-                                <th scope="col">Description</th>
-
-                            </tr>
-                        </thead>
+                    <thead class="table-dark">
                         <tr>
-                            <td><?php echo $row['user_id'] ?></td>
-                            <td><?php echo $item_name ?></td>
-                            <td><?php echo $row['rating'] ?></td>
-                            <td><?php echo $row['description'] ?></td>
-                            <td>
+                            <th scope="col">User ID</th>
+                            <th scope="col">Item Name</th>
+                            <th scope="col">Rating</th>
+                            <th scope="col">Description</th>
+                            <th scope="col">Action</th>
 
-                                <!--Show edit and delete options only if it is review the user posted -->
-                                <!-- Show delete options if user is an admin -->
-
-                                <?php if ($user_data['user_id'] == $user_id || $user_data['type'] == 'admin'){?>
-                                <a class="btn btn-dark"
-                                    href="delete_review.php?id=<?php echo $row['review_id']?>">Delete</a>
-
-                                <?php } ?>
-
-                                <?php if ($user_data['user_id'] == $user_id){?>
-                                <a class="btn btn-dark"
-                                    href="update_review.php?id=<?php echo $row['review_id']?>">Edit</a>
-                                <?php }?>
-                            </td>
                         </tr>
-                        <?php
+                    </thead>
+                    <tr>
+                        <td><?php echo $row['user_id'] ?></td>
+                        <td><?php echo $item_name ?></td>
+                        <td><?php echo $row['rating'] ?></td>
+                        <td><?php echo $row['description'] ?></td>
+                        <td>
+
+                            <!--Show edit and delete options only if it is review the user posted -->
+                            <!-- Show delete options if user is an admin -->
+
+                            <?php if ($user_data['user_id'] == $user_id || $user_data['type'] == 'admin'){?>
+                            <a class="btn btn-dark"
+                                href="delete_review.php?id=<?php echo $row['review_id']?>">Delete</a>
+
+                            <?php } ?>
+
+                            <?php if ($user_data['user_id'] == $user_id){?>
+                            <a class="btn btn-dark" href="update_review.php?id=<?php echo $row['review_id']?>">Edit</a>
+                            <?php }?>
+                        </td>
+                    </tr>
+                    <?php
                         }
                     ?>
-                    </tbody>
-                </table>
-            </div>
-
+                </tbody>
+            </table>
         </div>
 
-        <body>
+    </div>
+
+    <body>
 
 
-    </section>
+        </section>
