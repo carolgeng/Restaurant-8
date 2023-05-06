@@ -1,16 +1,13 @@
- <!-- Carol Geng, styling for landing page -->
-
- <!-- check if logged in -->
- <?php
+<?php
 session_start();
     include("header.php");
+
     $user_data = check_login($conn);
 ?>
 
 <html>
     <head>
-        <!--styling for landing page -->
-        <title>Restaurant 8</title>
+        <title>Landing</title>
     </head>
 
     <body style="text-align: center; background: url(restaurant.jpeg) no-repeat center center fixed; 
