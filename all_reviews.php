@@ -77,7 +77,7 @@ session_start();
                         ?>
                     <tr>
                         <?php $user_info = get_user($conn, $row['user_id']) ?>
-                        <td><?php echo $row['user_id'] ?></td>
+                        <td><?php echo $user_info['first_name'] ?></td>
                         <td><?php echo $item_name ?></td>
                         <td><?php echo $row['rating'] ?></td>
                         <td><?php echo $row['description'] ?></td>
