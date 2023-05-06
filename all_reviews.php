@@ -78,6 +78,7 @@ session_start();
                             <th scope="col">Item Name</th>
                             <th scope="col">Rating</th>
                             <th scope="col">Description</th>
+                            <th scope="col">Date</th>
         
                             </tr>
                             </thead>
@@ -86,6 +87,7 @@ session_start();
                             <td><?php echo $item_name ?></td>
                             <td><?php echo $row['rating'] ?></td>
                             <td><?php echo $row['description'] ?></td>
+                            <td><?php echo date("d-m-Y",strtotime($row['date'])) ?></td>
                             <td>
 
                                         <!--Show edit and delete options only if it is review the user posted -->
