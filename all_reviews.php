@@ -59,24 +59,22 @@ session_start();
 
         <div class="container">
             <table class="table table-hover">
+                <thead class="table-dark">
+                    <tr>
+                    <th scope="col">User ID</th>
+                    <th scope="col">Item Name</th>
+                    <th scope="col">Rating</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Action</th>
+                    </tr>
+                </thead>
                 <tbody>
                     <?php
-                        $query = "SELECT * FROM `reviews`"; 
-                        $result = mysqli_query($conn, $query);
-                        while ($row = mysqli_fetch_assoc($result)) {
-                            ?>
-
-                    <thead class="table-dark">
-                        <tr>
-                            <th scope="col">User ID</th>
-                            <th scope="col">Item Name</th>
-                            <th scope="col">Rating</th>
-                            <th scope="col">Description</th>
-                            <th scope="col">Date</th>
-                            <th scope="col">Action</th>
-
-                        </tr>
-                    </thead>
+                    $query = "SELECT * FROM `reviews`"; 
+                    $result = mysqli_query($conn, $query);
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        ?>
                     <tr>
                         <td><?php echo $row['user_id'] ?></td>
                         <td><?php echo $item_name ?></td>
