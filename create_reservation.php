@@ -80,65 +80,68 @@ session_start();
 
 <!doctype html>
 <html>
-    <head>
-        <title>Create Reservation</title>
-        <style>
-        </style>
-    </head>
-    <body>
-        <div class='card mx-auto w-75'>
-            <h1 class="card-header">Create Reservation</h1>
-            <form method='post' class="card-body">
-                <div class='row'>
-                    <div class='col mb-3'>
-                        Email:
-                        <?php if ($user_data['type'] == 'customer') { ?>
-                        <input type="text" class="form-control" value=<?php echo $row['email'] ?> disabled>
-                        <?php } ?>  
-                        <?php if ($user_data['type'] == 'admin') { ?>
-                        <input type="text" class="form-control" name = "email_user">
-                        <?php } ?> 
 
-                    </div>
+<head>
+    <title>Create Reservation</title>
+    <style>
+    </style>
+</head>
+
+<body>
+    <div class='card mx-auto w-75'>
+        <h1 class="card-header">Create Reservation</h1>
+        <form method='post' class="card-body">
+            <div class='row'>
+                <div class='col mb-3'>
+                    Email:
+                    <?php if ($user_data['type'] == 'customer') { ?>
+                    <input type="text" class="form-control" value=<?php echo $row['email'] ?> disabled>
+                    <?php } ?>
+                    <?php if ($user_data['type'] == 'admin') { ?>
+                    <input type="text" class="form-control" name="email_user">
+                    <?php } ?>
+
                 </div>
-                <div class='row'>
-                    <div class='col mb-3'>
-                        First Name:
-                        <?php if ($user_data['type'] == 'customer') { ?>
-                        <input type="text" class="form-control" value=<?php echo $row['first_name'] ?> disabled>
-                        <?php } ?>  
-                        <?php if ($user_data['type'] == 'admin') { ?>
-                        <input type="text" class="form-control" name = "fname">
-                        <?php } ?> 
-                    </div>
-                    <div class='col mb-3'>
-                        Last Name:
-                        <?php if ($user_data['type'] == 'customer') { ?>
-                        <input type="text" class="form-control" value=<?php echo $row['first_name'] ?> disabled>
-                        <?php } ?>  
-                        <?php if ($user_data['type'] == 'admin') { ?>
-                        <input type="text" class="form-control" name = "lname">
-                        <?php } ?> 
-                    </div>
+            </div>
+            <div class='row'>
+                <div class='col mb-3'>
+                    First Name:
+                    <?php if ($user_data['type'] == 'customer') { ?>
+                    <input type="text" class="form-control" value=<?php echo $row['first_name'] ?> disabled>
+                    <?php } ?>
+                    <?php if ($user_data['type'] == 'admin') { ?>
+                    <input type="text" class="form-control" name="fname">
+                    <?php } ?>
                 </div>
-                <div class='row'>
-                    <div class='col mb-3'>
-                        Date & Time:
-                        <input type="datetime-local" class="form-control" name='res_date'>
-                    </div>
+                <div class='col mb-3'>
+                    Last Name:
+                    <?php if ($user_data['type'] == 'customer') { ?>
+                    <input type="text" class="form-control" value=<?php echo $row['last_name'] ?> disabled>
+                    <?php } ?>
+                    <?php if ($user_data['type'] == 'admin') { ?>
+                    <input type="text" class="form-control" name="lname">
+                    <?php } ?>
                 </div>
-                <div class='row'>
-                    <div class='col mb-3'>
-                        Number of Guests
-                        <input type="number" class="form-control" min="1" name='guest_num'>
-                    </div>
+            </div>
+            <div class='row'>
+                <div class='col mb-3'>
+                    Date & Time:
+                    <input type="datetime-local" class="form-control" name='res_date'>
                 </div>
-                <div class="d-grid gap-2">
-                    <a href='reserve.php' class="btn btn-outline-danger">Cancel</a>
-                    <input type='submit' name="submit" value='Submit' class="btn btn-outline-dark">
+            </div>
+            <div class='row'>
+                <div class='col mb-3'>
+                    Number of Guests
+                    <input type="number" class="form-control" min="1" name='guest_num'>
                 </div>
-                
-            </form>
-        </div>
-    </body>
+            </div>
+            <div class="d-grid gap-2">
+                <a href='reserve.php' class="btn btn-outline-danger">Cancel</a>
+                <input type='submit' name="submit" value='Submit' class="btn btn-outline-dark">
+            </div>
+
+        </form>
+    </div>
+</body>
+
 </html>
